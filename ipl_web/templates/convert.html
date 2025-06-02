@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>INR to Crypto Converter</h1>
+<form method="POST">
+  <label>Enter INR values (comma-separated):</label>
+  <input type="text" name="values" required>
+
+  <input type="submit" value="Convert">
+</form>
+
+{% if result %}
+  <h3>Results:</h3>
+  <textarea readonly>{{ result | join('\n') }}</textarea>
+{% endif %}
+{% endblock %}
